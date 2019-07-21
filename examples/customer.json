@@ -1,0 +1,14 @@
+{
+  "custId":"C100001", 
+  "custFname":"Andrew",
+  "custLname":"Jason",
+  "address":
+  {
+    "addrLine1":"301",
+    "addrLine2":"Hunter Hills",
+    "city":"Sydney",
+    "state":"NSW", 
+    "country":"Australia", 
+    "zip": 2073
+  }
+}

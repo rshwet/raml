@@ -1,0 +1,14 @@
+{
+  "custId":"C100004", 
+  "custFname":"Roger",
+  "custLname":"O.",
+  "address":
+  {
+    "addrLine1":"101",
+    "addrLine2":"Pennelope Avenue",
+    "city":"Sydney",
+    "state":"NSW",
+    "country":"Australia", 
+    "zip": 2033
+  }
+}

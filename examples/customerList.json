@@ -1,0 +1,43 @@
+[
+    {
+      "custId":"C100001", 
+      "custFname":"Andrew",
+      "custLname":"Jason",
+      "address":
+      { 
+        "addrLine1":"301",
+        "addrLine2":"Hunter Hills",
+        "city":"Sydney",
+        "state":"NSW", 
+        "country":"Australia", 
+        "zip": 2073}
+    },
+    {
+      "custId":"C100002", 
+      "custFname":"Sunny",
+      "custLname":"Jack",
+      "address":
+      {
+        "addrLine1":"301",
+        "addrLine2":"Gladesville",
+        "city":"Sydney",
+        "state":"NSW", 
+        "country":"Australia",
+        "zip": 2093
+      }
+    }, 
+    {
+      "custId":"C100003", 
+      "custFname":"Chris",
+      "custLname":"J",
+      "address":
+      {
+        "addrLine1":"1",
+        "addrLine2":"Mowbray Road",
+        "city":"Sydney",
+        "state":"NSW",
+        "country":"Australia",
+        "zip": 2073
+      }
+    }
+  ]
