@@ -1,0 +1,92 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/087b69f1-96af-4397-a42b-b1381a883c8a/ # 
+title: RetailApi
+version: 1.0
+mediaType: [ application/json ]
+types:
+  Customer: !include /exchange_modules/204a894e-b7b0-42f5-847f-5e4f6fe7deb8/apidatatype/1.0.2/Customer.raml
+
+/Customer:
+  get:
+    description: get list of all customers 
+    responses:
+      200:
+        headers:
+          Cache-Control: 
+            type: string
+            example: private, max-age=300
+          ETag:
+            description: Version of the resource used
+            type: string
+            example: !include examples/etag.txt
+        body:
+          application/json:
+            type: Customer[]
+            example: !include examples/customerList.json
+  post:
+    description: Add customer record to the system
+    body:
+      application/json:
+        type: Customer
+        example : !include examples/newCustomer.json
+    responses:
+      202:
+        headers:
+          Cache-Control: 
+            type: string
+            example: private, max-age=300
+          ETag:
+            description: Version of the resource used
+            type: string
+            example: !include examples/etag.txt
+        body:
+          application/json:
+            example: |
+              {"message":"customer added successfully"}
+/{custId}:
+  get:
+    description: Get selected customer information
+    responses:
+      200:
+        body:
+          application/json:
+            type: Customer
+            example: !include examples/customer.json
+  put:
+    description: Update Customer information  for the selected custId 
+    responses:
+      204:
+        description: Customer details updated successfully
+        headers:
+          ETag:
+            description: Current version of the resource
+            type: string
+            example: !include examples/etag.txt
+      304:
+        description: Customer not updated
+        headers:
+          ETag:
+            description: Version of the resource used
+            type: string
+            example: !include examples/etag.txt
+  delete:
+    description: Deletes a selected record for the selected custId
+    responses:
+      202:
+        description: Customer deleted successfully
+        headers:
+          ETag:
+            description: Version of the resource used
+            type: string
+            example: !include examples/etag.txt
+        body:
+          application/json:
+            example: |
+              {"message":"customer deleted successfully"}
+      304:
+        description: Customer not deleted
+        headers:
+          ETag:
+            description: Version of the resource used
+            type: string
+            example: !include examples/etag.txt
